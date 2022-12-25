@@ -1,0 +1,13 @@
+/*
+ * uart_communication_fsm.c
+ *
+ *  Created on: 25 Dec 2022
+ *      Author: HP PV
+ */
+
+
+#include "uart_communication_fsm.h"
+
+void uart_communication_fsm() {
+
+}

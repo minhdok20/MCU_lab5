@@ -1,0 +1,35 @@
+/*
+ * command_parser_fsm.c
+ *
+ *  Created on: 25 Dec 2022
+ *      Author: HP PV
+ */
+
+
+#include "command_parser_fsm.h"
+
+void command_parser_fsm() {
+	switch(command_parser_status) {
+	case INIT_COMMAND:
+		break;
+	case WAIT_COMMAND_END:
+		switch(temp) {
+		case '#':
+			command_parser_status = INIT_COMMAND;
+			buffer[index_buffer] = '\0';
+			buffer_flag = 1;
+			break;
+		case '!':
+			index_buffer = 0;
+			break;
+		default:
+			buffer[index_buffer++] = temp;
+			if(index_buffer == MAX_BUFFER_SIZE)
+				index_buffer = 0;
+			break;
+		}
+		break;
+	default:
+		break;
+	}
+}

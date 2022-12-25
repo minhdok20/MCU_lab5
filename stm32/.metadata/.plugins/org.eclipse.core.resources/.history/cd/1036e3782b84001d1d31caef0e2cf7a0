@@ -1,0 +1,19 @@
+/*
+ * global.c
+ *
+ *  Created on: 25 Dec 2022
+ *      Author: HP PV
+ */
+
+
+#include "global.h"
+
+int command_parser_status = INIT_COMMAND;
+int uart_communication_status = WAIT_RST;
+
+uint8_t temp = 0;
+uint8_t buffer [ MAX_BUFFER_SIZE ];
+uint8_t index_buffer = 0;
+uint8_t buffer_flag = 0;
+
+

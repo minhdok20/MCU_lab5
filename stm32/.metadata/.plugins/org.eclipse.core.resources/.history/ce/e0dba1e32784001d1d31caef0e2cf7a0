@@ -1,0 +1,19 @@
+/*
+ * global.h
+ *
+ *  Created on: 25 Dec 2022
+ *      Author: HP PV
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "main.h"
+
+#define MAX_BUFFER_SIZE 30
+uint8_t temp = 0;
+uint8_t buffer [ MAX_BUFFER_SIZE ];
+uint8_t index_buffer = 0;
+uint8_t buffer_flag = 0;
+
+#endif /* INC_GLOBAL_H_ */

@@ -1,0 +1,30 @@
+/*
+ * uart_communication_fsm.c
+ *
+ *  Created on: 25 Dec 2022
+ *      Author: HP PV
+ */
+
+
+#include "uart_communication_fsm.h"
+
+void uart_communication_fsm() {
+	switch(uart_communication_status) {
+	case WAIT_RST:
+		if(buffer_flag) {
+			buffer_flag = 0;
+			if(buffer[0] == 'R' && buffer[1] == 'S' && buffer[2] == 'T') {
+				HAL_ADC_Start(&hadc1);
+			}
+		}
+		break;
+	case SEND_ADC:
+
+		break;
+	case WAIT_OK:
+
+		break;
+	default:
+		break;
+	}
+}
